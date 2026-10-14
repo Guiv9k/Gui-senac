@@ -1,0 +1,5 @@
+Escopo: Um app de delivery com varios Bugs
+Estratégias: Testando manualmente como um cliente faria
+Recursos: Index.html
+Cronograma: Olhei o codigo por 3 a 4m e demorei 10 minutos para ajeitar
+Ferramentas utilizadas na operação: Vs code, Github/Git Desktop
