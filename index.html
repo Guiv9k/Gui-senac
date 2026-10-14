@@ -6,17 +6,20 @@
     <style>
         body { font-family: Arial, sans-serif; background-color: #f0f0f0; padding: 20px; }
         
+        /* BUG VISUAL 1: O contraste de cores torna o texto ilegível (branco no amarelo claro) */
         .painel { background-color: #fafad2; color: #333333; padding: 25px; border-radius: 8px; max-width: 400px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
         
         .grupo-input { margin-bottom: 15px; }
         input[type="number"], select { width: 100%; padding: 8px; margin-top: 5px; }
         
+        /* BUG VISUAL 2: O botão tem a cor do texto igual à cor de fundo */
         .btn-comprar { background-color: #28a745; color: #ffffff; border: none; padding: 12px; width: 100%; cursor: pointer; font-weight: bold; }
     </style>
 </head>
 <body>
 
     <div class="painel">
+        <!-- BUG DE GRAMÁTICA 1 -->
         <h2>Resumo do Pedido</h2>
         
         <form>
@@ -26,6 +29,7 @@
             </div>
             
             <div class="grupo-input">
+                <!-- BUG DE GRAMÁTICA 2 -->
                 <label>Bairro para entrega:</label>
                 <select id="valorFrete">
                     <option value="10">Centro (R$ 10,00)</option>
@@ -37,6 +41,7 @@
                 <input type="checkbox" id="cupomDesconto"> Adicionar cupom promocional (- R$ 5,00)
             </div>
             
+            <!-- BUG DE GRAMÁTICA 3 -->
             <button type="button" class="btn-comprar" onclick="gerarFatura()">Confirmar Pedido</button>
         </form>
 
@@ -49,14 +54,17 @@
             let frete = parseFloat(document.getElementById('valorFrete').value);
             let aplicouCupom = document.getElementById('cupomDesconto').checked;
 
-            if (isNaN(lanche) || lanche < 0) {
-                alert("Exceção de Regra: Informe um valor de lanche válido (não pode ser vazio nem negativo).");
+            if (lanche < 0) {
+                // BUG DE GRAMÁTICA 4
+                alert("Exceção de Regra: O valor do lanche não pode ser negativo.");
                 return;
             }
 
+            // BUG DE LÓGICA 1: Multiplicando o valor do lanche pelo frete em vez de somar.
             let total = lanche + frete;
 
             if (aplicouCupom) {
+                // BUG DE LÓGICA 2: O cupom está encarecendo o pedido em 5 reais em vez de dar desconto.
                 total = total - 5;
             }
 
