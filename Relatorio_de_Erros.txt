@@ -1,0 +1,5 @@
+Passos para reproduzir: Abrir o sistema, digitar R$ 20 no valor do lanche, escolher um bairro com frete de R$ 10 e clicar em "Confirmar Pedido".
+
+Resultado obtido: O sistema mostrou o total de R$ 200, porque multiplicou o lanche pelo frete.
+
+Resultado esperado: Mostrar o total de R$ 30, somando o lanche (R$ 20) com o frete (R$ 10).

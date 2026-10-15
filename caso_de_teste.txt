@@ -1,0 +1,7 @@
+Objetivo: verificar se o sistema calcula corretamente o pedido
+
+contexto inicial: sistema aberto na tela de pedido
+
+ação executada: digitar o valor do lanche, escolher o bairro e decidir se quer usar o cupom ou não
+
+saida esperada: o codigo rodar sem erros algum
